@@ -95,6 +95,7 @@ aws ec2 authorize-security-group-ingress \
   --cidr 0.0.0.0/0
 ```
 #### 4.3. Launch the EC2 instance:
+- **AMI Suggestion:** `ami-0ebfd941bbafe70c6`. [Find an AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)
 ```bash
 aws ec2 run-instances \
   --image-id <ami-id> \
