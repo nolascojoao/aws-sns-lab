@@ -137,6 +137,19 @@ aws s3api put-public-access-block \
   --bucket <bucket-name> \
   --public-access-block-configuration BlockPublicAcls=false,IgnorePublicAcls=false
 ```
+```bash
+aws s3api put-bucket-policy --bucket <bucket-name> --policy '{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::<bucket-name>/*"
+        }
+    ]
+}'
+```
 
 ---
 
