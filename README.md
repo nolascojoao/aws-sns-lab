@@ -170,12 +170,8 @@ aws s3api put-bucket-notification-configuration --bucket <bucket-name> \
                 "Key": {
                     "FilterRules": [
                         {
-                            "Name": "suffix",
-                            "Value": ".jpg"
-                        },
-                        {
-                            "Name": "suffix",
-                            "Value": ".png"
+                            "Name": "prefix",
+                            "Value": "images/"
                         }
                     ]
                 }
