@@ -1,4 +1,4 @@
-# AWS SNS Image Notification Lab (IN PROGRESS)
+# AWS SNS Image Notification Lab 
 
 <div align="center">
   <img src="screenshot/Architecture.png" width=""/>
@@ -322,12 +322,15 @@ aws s3api put-bucket-notification-configuration --bucket <bucket-name> \
 #### 8.1. Upload an Image File to the S3 Bucket:
 ```bash
 wget https://d2908q01vomqb2.cloudfront.net/d435a6cdd786300dff204ee7c2ef942d3e9034e2/2024/09/16/IT-1-300x200.jpg
-aws s3 cp path/to/your-image.jpg s3://<BUCKET_NAME>/images/
 ```
 
 <div align="center">
   <img src="screenshot/8.1.1.PNG" width=""/>
 </div>
+
+```bash
+aws s3 cp path/to/your-image.jpg s3://<BUCKET_NAME>/images/
+```
 
 <div align="center">
   <img src="screenshot/8.1.2.PNG" width=""/>
