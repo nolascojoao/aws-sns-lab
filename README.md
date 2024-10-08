@@ -130,14 +130,14 @@ aws ec2 describe-instances \
 #### 5.1. Create an S3 Bucket:
 ```bash
 aws s3api create-bucket \
-  --bucket cafe-s3-bucket \
+  --bucket <bucket-name> \
   --region <region> \
   --create-bucket-configuration LocationConstraint=<region>
 ```
 #### 5.2. Set public permissions for the S3 Bucket:
 ```bash
 aws s3api put-bucket-acl \
-  --bucket cafe-s3-bucket \
+  --bucket <bucket-name> \
   --acl public-read
 ```
 
@@ -164,7 +164,7 @@ aws sns subscribe \
 #### 7.1. Set up event notifications for the S3 Bucket for image file types:
 ```bash
 aws s3api put-bucket-notification-configuration \
-    --bucket cafe-s3-bucket \
+    --bucket <bucket-name> \
     --notification-configuration '{
         "TopicConfigurations": [
             {
@@ -194,7 +194,7 @@ aws s3api put-bucket-notification-configuration \
 ## Step 8: Verify the Setup
 #### 8.1. Upload an Image File to the S3 Bucket:
 ```bash
-aws s3 cp <path-to-your-image-file> s3://cafe-s3-bucket/
+aws s3 cp <path-to-your-image-file> s3://<bucket-name>/
 ```
 #### 8.2. Check Your Email for Notification:
 - After successfully uploading an image file you should receive an email notification from the SNS topic.
