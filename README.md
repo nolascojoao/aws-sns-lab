@@ -160,30 +160,29 @@ aws sns subscribe \
 ## Step 7: Configure S3 Notification to Trigger SNS
 #### 7.1. Set up event notifications for the S3 Bucket for image file types:
 ```bash
-aws s3api put-bucket-notification-configuration \
-    --bucket <bucket-name> \
-    --notification-configuration '{
-        "TopicConfigurations": [
-            {
-                "TopicArn": "<sns-topic-arn>",
-                "Events": ["s3:ObjectCreated:*"],
-                "Filter": {
-                    "Key": {
-                        "FilterRules": [
-                            {
-                                "Name": "suffix",
-                                "Value": ".jpg"
-                            },
-                            {
-                                "Name": "suffix",
-                                "Value": ".png"
-                            }
-                        ]
-                    }
+aws s3api put-bucket-notification-configuration --bucket <bucket-name> \
+--notification-configuration '{
+    "TopicConfigurations": [
+        {
+            "TopicArn": "<topic-arn>",
+            "Events": ["s3:ObjectCreated:*"],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Name": "suffix",
+                            "Value": ".jpg"
+                        },
+                        {
+                            "Name": "suffix",
+                            "Value": ".png"
+                        }
+                    ]
                 }
             }
-        ]
-    }'
+        }
+    ]
+}'
 ```
 
 ---
