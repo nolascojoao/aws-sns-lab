@@ -129,10 +129,7 @@ aws ec2 describe-instances \
 ## Step 5: Create the S3 Bucket
 #### 5.1. Create an S3 Bucket:
 ```bash
-aws s3api create-bucket \
-  --bucket <bucket-name> \
-  --region <region> \
-  --create-bucket-configuration LocationConstraint=<region>
+aws s3api create-bucket --bucket <bucket-name> 
 ```
 #### 5.2. Set public permissions for the S3 Bucket:
 ```bash
