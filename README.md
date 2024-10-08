@@ -133,9 +133,9 @@ aws s3api create-bucket --bucket <bucket-name>
 ```
 #### 5.2. Set public permissions for the S3 Bucket:
 ```bash
-aws s3api put-bucket-acl \
+aws s3api put-public-access-block \
   --bucket <bucket-name> \
-  --acl public-read
+  --public-access-block-configuration BlockPublicAcls=false,IgnorePublicAcls=false
 ```
 
 ---
