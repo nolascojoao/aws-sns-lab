@@ -11,6 +11,7 @@ Set up an S3 bucket with event notifications to trigger email alerts via SNS for
 ⚠️ **Attention:**
 - All the tasks will be completed via the command line using AWS CLI. Ensure you have the necessary permissions. [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Charges may apply for completing this lab. [AWS Pricing](https://aws.amazon.com/pricing/)
+- ![Click here](/shell) to access the automated version with shell scripts.
 ---
 
 ## Step 1: Create VPC and Subnet
