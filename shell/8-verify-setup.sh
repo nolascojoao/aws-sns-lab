@@ -13,7 +13,10 @@ if [ -z "$bucket_name" ]; then
 fi
 
 # Upload an Image File to the S3 Bucket
-curl -o your-image.jpg https://d2908q01vomqb2.cloudfront.net/d435a6cdd786300dff204ee7c2ef942d3e9034e2/2024/09/16/IT-1-300x200.jpg
+# For Windows:
+# curl -o your-image.jpg https://d2908q01vomqb2.cloudfront.net/d435a6cdd786300dff204ee7c2ef942d3e9034e2/2024/09/16/IT-1-300x200.jpg
+
+wget https://d2908q01vomqb2.cloudfront.net/d435a6cdd786300dff204ee7c2ef942d3e9034e2/2024/09/16/IT-1-300x200.jpg -O your-image.jpg
 
 # Upload the image to the S3 bucket
 aws s3 cp your-image.jpg s3://"$bucket_name"/images/
