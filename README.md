@@ -344,6 +344,8 @@ aws s3 cp path/to/your-image.jpg s3://<BUCKET_NAME>/images/
   <img src="screenshot/8.2.PNG" width=""/>
 </div>
 
+- To customize the email notification, use a Lambda function, as SNS alone can't handle it.⚠️
+
 <div align="center">
   <img src="screenshot/8.3.PNG" width=""/>
 </div>
